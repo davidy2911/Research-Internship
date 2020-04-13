@@ -16,7 +16,7 @@ def approximate(distribution, solver, M, n, debug = 0):
     
     if debug == 1: print('Distribution generated')
     
-    L = solver(M)
+    solve = solver(M)
     
     if debug == 1: print('Solver generated')
     
@@ -28,7 +28,7 @@ def approximate(distribution, solver, M, n, debug = 0):
            
            x = dist.generate()
            
-           y = L.solve(x[0])
+           y = solve.solve(x[0])
            
            Y.append(dist.f(x, y))
     
