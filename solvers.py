@@ -51,8 +51,11 @@ if __name__ == '__main__':
     import create_matrix as cm
     n = 4 
     M = cm.create_matrix(n,0.1)
+    x = np.array([*range(n)])
+    y = np.linalg.solve(M.todense(), x)
     solver =  FFTInv(M)
     print(solver.inv)
     print(solver.solve(x))
+    print(y)
 
 
